@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Login">
+
+    <!--  LINEAS DE GUÍA HORIZONTALES  -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/GLHorizontal1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/GLHorizontal2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.15" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/GLHorizontal3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.75"/>
+
+    <!--  LINEAS DE GUÍA VERTICALES  -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/GLVertical1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/GLVertical2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.20"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/GLVertical3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.80"/>
+
+    <!--  LO DEMAS  -->
+
+    <ImageView
+        android:id="@+id/LogoIconIVL"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/cactus_icon2"
+        app:layout_constraintLeft_toRightOf="@+id/GLVertical2"
+        app:layout_constraintRight_toLeftOf="@id/GLVertical3"
+        app:layout_constraintTop_toBottomOf="@id/GLHorizontal2"/>
+
+    <TextView
+        android:id="@+id/TextLogoLoginTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:fontFamily="@font/cactusregular"
+        android:textSize="70sp"
+        android:textColor="@color/md_theme_onBackground"
+        app:layout_constraintLeft_toRightOf="@id/GLVertical2"
+        app:layout_constraintRight_toLeftOf="@id/GLVertical3"
+        app:layout_constraintTop_toBottomOf="@id/LogoIconIVL"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/forgotpsswrd_subrayado"
+        app:layout_constraintTop_toBottomOf="@id/LContrasenaTIL"
+        app:layout_constraintRight_toLeftOf="@id/GLVertical3"
+        android:layout_marginRight="5dp"
+        android:textColor="@color/md_theme_tertiary"
+        />
+
+    <Button
+        android:id="@+id/SignButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign up"
+        android:layout_marginTop="25dp"
+        app:layout_constraintLeft_toRightOf="@+id/GLVertical2"
+        app:layout_constraintRight_toLeftOf="@id/GLVertical3"
+        app:layout_constraintTop_toBottomOf="@+id/LContrasenaTIL"/>
+
+
+    <TextView
+        android:id="@+id/donthaveaccountTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="don't have an account?"
+        android:textColor="@color/md_theme_outline"
+        android:textSize="15sp"
+        app:layout_constraintLeft_toRightOf="@id/GLVertical2"
+        app:layout_constraintTop_toBottomOf="@id/SignButton"
+        />
+
+    <TextView
+        android:id="@+id/RegisterTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/register_subrayado"
+        android:textSize="15sp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintRight_toLeftOf="@id/GLVertical3"
+        app:layout_constraintLeft_toRightOf="@id/donthaveaccountTV"
+        app:layout_constraintTop_toBottomOf="@id/SignButton"
+        android:textColor="@color/md_theme_tertiary"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/LLoginTIL"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textColorHint="@color/md_theme_onPrimary"
+        app:layout_constraintLeft_toRightOf="@+id/GLVertical2"
+        app:layout_constraintRight_toLeftOf="@id/GLVertical3"
+        app:layout_constraintTop_toBottomOf="@id/TextLogoLoginTV">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:drawableStart="@drawable/baseline_person_24"
+            android:drawableTint="@color/md_theme_onPrimary"
+            android:drawablePadding="20dp"
+            android:background="@color/md_theme_primaryContainer_mediumContrast"
+            android:hint="Email adress"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/md_theme_background" />
+    </com.google.android.material.textfield.TextInputLayout>
+    
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/LContrasenaTIL"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:textColorHint="@color/md_theme_onPrimary"
+        app:layout_constraintLeft_toRightOf="@+id/GLVertical2"
+        app:layout_constraintRight_toLeftOf="@id/GLVertical3"
+        app:layout_constraintTop_toBottomOf="@id/LLoginTIL"
+        app:passwordToggleTint="@color/md_theme_onPrimary"
+        app:passwordToggleEnabled="true">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:drawableStart="@drawable/baseline_lock_24"
+            android:drawableTint="@color/md_theme_onPrimary"
+            android:drawablePadding="20dp"
+            android:hint="Password"
+            android:background="@color/md_theme_primaryContainer_mediumContrast" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

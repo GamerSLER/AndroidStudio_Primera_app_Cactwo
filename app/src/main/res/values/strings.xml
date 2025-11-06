@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Cactwo</string>
+    <string name="texto_ejemplo">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</string>
+    <string name="register_subrayado"><u>Register</u></string>
+    <string name="login_subrayado"><u>Login</u></string>
+    <string name="forgotpsswrd_subrayado"><u>Forgot Password</u></string>
+</resources>

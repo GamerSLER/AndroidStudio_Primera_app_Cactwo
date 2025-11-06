@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Register">
+
+    <!--  LINEAS DE GUÍA HORIZONTALES  -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/GLHorizontal1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/GLHorizontal2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.07" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/GLHorizontal3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.93"/>
+
+    <!--  LINEAS DE GUÍA VERTICALES  -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/GLVertical1.1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.48"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/GLVertical1.2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.52"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/GLVertical2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.10"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/GLVertical3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.90"/>
+
+    <!--TODO LO DEMAS-->
+    <!--R...: Register-->
+    <!--...TIL: Text Input Layout-->
+    <!--...TV: TextView-->
+    <!--...IV: ImageView-->
+    <ImageView
+        android:id="@+id/LogoIconIVL"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/cactus_icon2"
+        app:layout_constraintLeft_toRightOf="@+id/GLVertical2"
+        app:layout_constraintRight_toLeftOf="@id/GLVertical3"
+        app:layout_constraintTop_toBottomOf="@id/GLHorizontal2"/>
+
+    <TextView
+        android:id="@+id/TextRegisterLogoTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:fontFamily="@font/cactusregular"
+        android:textSize="70sp"
+        android:textColor="@color/md_theme_onBackground"
+        app:layout_constraintLeft_toRightOf="@id/GLVertical2"
+        app:layout_constraintRight_toLeftOf="@id/GLVertical3"
+        app:layout_constraintTop_toBottomOf="@id/LogoIconIVL"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/RnombresTIL"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        app:layout_constraintTop_toBottomOf="@id/TextRegisterLogoTV"
+        app:layout_constraintLeft_toRightOf="@+id/GLVertical2"
+        app:layout_constraintRight_toLeftOf="@id/GLVertical1.1"
+        android:textColorHint="@color/md_theme_onPrimary"
+        android:layout_marginTop="20dp">
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:drawableStart="@drawable/baseline_person_24"
+            android:drawablePadding="10dp"
+            android:drawableTint="@color/md_theme_onPrimary"
+            android:hint="Name"
+            android:background="@color/md_theme_primaryContainer_mediumContrast"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/RapellidosTIL"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        app:layout_constraintTop_toBottomOf="@id/TextRegisterLogoTV"
+        app:layout_constraintLeft_toRightOf="@id/GLVertical1.2"
+        app:layout_constraintRight_toLeftOf="@id/GLVertical3"
+        android:textColorHint="@color/md_theme_onPrimary"
+        android:layout_marginTop="20dp">
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:drawableStart="@drawable/baseline_person_24"
+            android:drawablePadding="10dp"
+            android:drawableTint="@color/md_theme_onPrimary"
+            android:hint="Last name"
+            android:background="@color/md_theme_primaryContainer_mediumContrast"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/RcorreoTIL"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/GLVertical2"
+        app:layout_constraintRight_toLeftOf="@id/GLVertical3"
+        app:layout_constraintTop_toBottomOf="@id/RnombresTIL"
+        android:textColorHint="@color/md_theme_onPrimary"
+        android:paddingTop="15dp">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:drawableStart="@drawable/baseline_email_24"
+            android:drawablePadding="20dp"
+            android:drawableTint="@color/md_theme_onPrimary"
+            android:hint="Email adress"
+            android:background="@color/md_theme_primaryContainer_mediumContrast"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/RPasswordTIL"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/GLVertical2"
+        app:layout_constraintRight_toLeftOf="@id/GLVertical3"
+        app:layout_constraintTop_toBottomOf="@id/RcorreoTIL"
+        android:textColorHint="@color/md_theme_onPrimary"
+        android:paddingTop="15dp"
+        app:passwordToggleEnabled="true"
+        app:passwordToggleTint="@color/md_theme_onPrimary">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:drawableStart="@drawable/baseline_lock_24"
+            android:drawablePadding="20dp"
+            android:drawableTint="@color/md_theme_onPrimary"
+            android:hint="Password"
+            android:background="@color/md_theme_primaryContainer_mediumContrast"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/RConfirmPasswordTIL"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/GLVertical2"
+        app:layout_constraintRight_toLeftOf="@id/GLVertical3"
+        app:layout_constraintTop_toBottomOf="@id/RPasswordTIL"
+        android:textColorHint="@color/md_theme_onPrimary"
+        android:paddingTop="15dp"
+        app:passwordToggleEnabled="true"
+        app:passwordToggleTint="@color/md_theme_onPrimary">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:drawableStart="@drawable/baseline_lock_24"
+            android:drawablePadding="20dp"
+            android:drawableTint="@color/md_theme_onPrimary"
+            android:hint="Confirm password"
+            android:background="@color/md_theme_primaryContainer_mediumContrast"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/Rbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign up"
+        android:layout_marginTop="25dp"
+        app:layout_constraintLeft_toRightOf="@+id/GLVertical2"
+        app:layout_constraintRight_toLeftOf="@id/GLVertical3"
+        app:layout_constraintTop_toBottomOf="@+id/RConfirmPasswordTIL"/>
+
+    <TextView
+        android:id="@+id/Ralreadyhvanaccnt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Already have an account?"
+        android:textSize="15sp"
+        app:layout_constraintTop_toBottomOf="@id/Rbutton"
+        app:layout_constraintLeft_toRightOf="@+id/GLVertical2"
+        app:layout_constraintRight_toLeftOf="@id/GLVertical1.1"
+        android:layout_marginLeft="100dp"
+        android:textColor="@color/md_theme_outline"
+        android:paddingTop="10dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/login_subrayado"
+        android:textSize="15sp"
+        app:layout_constraintTop_toBottomOf="@id/Rbutton"
+        app:layout_constraintLeft_toRightOf="@+id/Ralreadyhvanaccnt"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/md_theme_tertiary"
+        android:paddingTop="10dp"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
