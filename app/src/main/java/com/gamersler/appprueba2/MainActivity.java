@@ -1,14 +1,24 @@
 package com.gamersler.appprueba2;
 
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.viewpager.widget.ViewPager;
+
+import com.gamersler.appprueba2.databinding.ActivityMainBinding;
+import com.gamersler.appprueba2.ui.frmanager.Paginador;
 
 public class MainActivity extends AppCompatActivity {
+    Button mainButton;
+    TextView mainTV;
+    int contador;
+    private ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,5 +31,11 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+
+        Paginador paginador = new Paginador(this, getSupportFragmentManager());
+        ViewPager viewPager = binding.CactusViewPager;
+        viewPager.setAdapter(paginador);
     }
 }
