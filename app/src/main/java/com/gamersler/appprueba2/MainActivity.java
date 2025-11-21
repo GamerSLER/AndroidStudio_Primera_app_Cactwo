@@ -37,5 +37,10 @@ public class MainActivity extends AppCompatActivity {
         Paginador paginador = new Paginador(this, getSupportFragmentManager());
         ViewPager viewPager = binding.CactusViewPager;
         viewPager.setAdapter(paginador);
+
+//        TextView textMain = findViewById(R.id.TextMain);
+//        Bundle bundle = getIntent().getExtras();
+//        String saludo = bundle.getString("nombre");
+//        textMain.setText("Hello " + saludo);
     }
 }

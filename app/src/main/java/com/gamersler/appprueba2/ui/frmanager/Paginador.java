@@ -9,6 +9,8 @@ import androidx.fragment.app.FragmentPagerAdapter;
 
 import com.gamersler.appprueba2.mainfr.Cactus;
 import com.gamersler.appprueba2.mainfr.Estepicursor;
+import com.gamersler.appprueba2.mainfr.tarjetas1;
+import com.gamersler.appprueba2.mainfr.tarjetas2;
 
 public class Paginador extends FragmentPagerAdapter {
     private final Context mContext;
@@ -22,8 +24,12 @@ public class Paginador extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         switch (position) {
             case 0:
-                return new Cactus();
+                return new tarjetas1();
             case 1:
+                return new tarjetas2();
+            case 2:
+                return new Cactus();
+            case 3:
                 return new Estepicursor();
         }
         return null;
@@ -31,6 +37,6 @@ public class Paginador extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        return 2;
+        return 4;
     }
 }

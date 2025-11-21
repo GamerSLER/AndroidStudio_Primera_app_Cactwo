@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +15,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.google.android.material.textfield.TextInputLayout;
+
+import org.w3c.dom.Text;
 
 public class Register extends AppCompatActivity {
 
@@ -36,10 +39,21 @@ public class Register extends AppCompatActivity {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor editor = sharedPreferences.edit();
 
+        TextView loginTV = findViewById(R.id.loginTV);
+
+        loginTV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Register.this, Login.class);
+                startActivity(intent);
+            }
+        });
+
         Button button = findViewById(R.id.Rbutton);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String usuario = r_nombres_til.getEditText().getText().toString();
                 boolean cont = true;
                 boolean nombreVerificado = emptyVerify(r_nombres_til);
                 boolean correoVerificado = emptyVerify(r_correo_til) && emailVerify(r_correo_til);
@@ -55,6 +69,12 @@ public class Register extends AppCompatActivity {
                     Intent intent = new Intent(Register.this, Login.class);
                     startActivity(intent);
                 }
+//                boolean continuar = true;
+//                if (continuar){
+//                    Intent intent = new Intent(Register.this,Login.class);
+//                    intent.putExtra("nombreFinal",usuario);
+//                    startActivity(intent);
+//                }
             }
         });
     }
